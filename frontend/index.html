@@ -13,19 +13,13 @@
 
     <header>
         <div class="header-left">
-            <img src="assets/freeRoomsLogo.png" alt="Freerooms Logo" class="logo">
+            <img id="freeroomsLogo" src="assets/freeRoomsLogo.png" alt="Freerooms Logo" class="logo">
             <h1>Freerooms</h1>
         </div>
         <div class="header-right">
             <nav>
                 <ul>
-                    <!-- <li><a href="#">Search</a></li>
-                    <li><a href="#">Map</a></li>
-                    <li><a href="#">Grid View</a></li>
-                    <li><a href="#">Dark Mode</a></li> -->
                     <li><a href="#"><span class="material-icons">search</span></a></li>
-                    <!-- <li class="special-item"><a href="#"><span class="material-icons">grid_view</span></a></li> -->
-
                     <li><a href="#"><span class="material-icons special-icon">grid_view</span></a></li>
                     <li><a href="#"><span class="material-icons">map</span></a></li>
                     <li><a href="#"><span class="material-icons">dark_mode</span></a></li>
@@ -35,55 +29,21 @@
     </header>
 
     <main>
-        <!-- <div class="search-bar">
-            <input type="text" placeholder="Search for a room...">
-            <button>Search</button>
-        </div> -->
-        <!-- <form action="search.php" method="GET" class="search-bar">
-            <input type="text" name="query" placeholder="Search for a building...">
-            <button type="submit">Search</button>
-        </form> -->
-
-
-        <!-- <div class="search-container">
-
-            <div class="filter">
-                <span class="material-symbols-outlined">filter_alt</span>
-                Filters
-            </div>
-    
-
-            <form action="search.php" method="GET" class="search-bar">
-                <span class="search-icon material-icons">search</span>1
-                <input type="text" name="query" placeholder="Search for a building...">
-            </form>
-
-            <div class="sort">
-                <span class="material-symbols-outlined">
-                    filter_list
-                    </span>
-                Sort
-            </div>
-
-        </div> -->
-
-        <div class="search-container">
+        <div class="main-top">
             <div class="filter"> 
                 <span class="material-symbols-outlined">filter_alt</span> Filters
             </div>
         
             <div class="search-bar">
-                <!-- <span class="search-icon material-icons">search</span> -->
+                <span class="search-icon material-symbols-outlined">search</span>
                 <input type="text" name="query" placeholder="Search for a building...">
             </div>
         
             <div class="sort"> 
-                <span class="material-symbols-outlined">sort</span> Sort
+                <span class="material-symbols-outlined">filter_list</span> Sort
             </div>
         </div>
         
-    
-
         <div class="room-list">
 
             <div class="room-card">
@@ -159,6 +119,19 @@
 
         </div>
     </main>
+    <script>
+        document.addEventListener("click", function () {
+            const logo = document.getElementById("freeroomsLogo");
+
+            logo.addEventListener("click", function () {
+                if (logo.src.endsWith("freeroomsDoorClosed.png")) {
+                    logo.src = "assets/freeRoomsLogo.png";
+                } else {
+                    logo.src = "assets/freeroomsDoorClosed.png";
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
